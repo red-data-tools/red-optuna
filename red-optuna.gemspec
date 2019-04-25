@@ -29,6 +29,7 @@ Gem::Specification.new do |spec|
     "#{spec.name}.gemspec",
   ]
   spec.files += Dir.glob("lib/**/*.rb")
+  spec.files += Dir.glob("doc/text/*")
   spec.files += Dir.glob("example/**/*.rb")
 
   spec.add_runtime_dependency("numpy", ">= 0.2.0")
