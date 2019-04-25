@@ -31,7 +31,7 @@ Gem::Specification.new do |spec|
   spec.files += Dir.glob("lib/**/*.rb")
   spec.files += Dir.glob("example/**/*.rb")
 
-  spec.add_runtime_dependency("pycall")
+  spec.add_runtime_dependency("numpy", ">= 0.2.0")
 
   spec.add_development_dependency("bundler")
   spec.add_development_dependency("rake")

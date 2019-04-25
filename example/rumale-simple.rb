@@ -17,7 +17,7 @@ study.optimize(n_trials: 100) do |trial|
                                               ["SVC", "RandomForest"])
   if classifier_name == "SVC"
     svc_regulation = trial.suggest_uniform("svc_regulation", 0.0, 1.0)
-    classifier = Rumale::LinearModel::SVC.new(reg_param: svc_regulation.to_f)
+    classifier = Rumale::LinearModel::SVC.new(reg_param: svc_regulation)
   else
     rf_max_depth = trial.suggest_loguniform("rf_max_depth", 2, 32).to_i
     classifier = Rumale::Ensemble::RandomForestClassifier.new(max_depth: rf_max_depth)

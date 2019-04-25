@@ -1,4 +1,4 @@
-require "pycall"
+require "numpy"
 
 module Optuna
   class << self
