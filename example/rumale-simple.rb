@@ -9,7 +9,7 @@ x = iris.to_narray(:sepal_length,
                    :sepal_width,
                    :petal_length,
                    :petal_width)
-y = Numo::NArray[*iris.label_encode(:label)]
+y = Numo::NArray.cast(iris.label_encode(:label))
 
 study = Optuna::Study.new
 study.optimize(n_trials: 100) do |trial|
@@ -30,4 +30,6 @@ study.optimize(n_trials: 100) do |trial|
   accuracy = report[:test_score].sum / splitter.n_splits
   1.0 - accuracy
 end
-p study.best_trial
+
+#puts PyCall.tuple(study.best_trial)
+puts study.best_params
